@@ -45,6 +45,7 @@ const nested2 = {
 const nested3 = [
   {
     key: 'someKey',
+    type: 'unchanged',
     children: [
       {
         key: 'keylvl-2', value1: 'valuelvl-2', value2: 'valuelvl-3', type: 'changed',
