@@ -6,6 +6,7 @@ const genDiff = (a, b) => {
   [...keys].map((k) => {
     const obj = { key: k };
     if (isObject(a[k]) && isObject(b[k])) {
+      obj.type = 'unchanged';
       obj.children = genDiff(a[k], b[k]);
     } else if (a[k] === b[k]) {
       obj.value = a[k];
@@ -28,7 +29,6 @@ const genDiff = (a, b) => {
     result.push(obj);
     return result;
   });
-
   return result;
 };
 
