@@ -21,14 +21,14 @@ const genDiff = (a, b) => {
         obj.type = 'added';
       }
       if (Object.hasOwn(b, k) && Object.hasOwn(a, k)) {
-        obj.value1 = a[k];
-        obj.value2 = b[k]; // change
+        obj.value = [a[k], b[k]];
         obj.type = 'changed';
       }
     }
     result.push(obj);
     return result;
   });
+  console.log('result:', result)
   return result;
 };
 
