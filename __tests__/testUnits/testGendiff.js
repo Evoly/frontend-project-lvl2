@@ -17,12 +17,11 @@ const data2 = {
 // TODO order matters ??
 const data3 = [
   {
-    key: 'timeout', value1: 50, value2: 70, type: 'changed',
+    key: 'timeout', value: [50, 70], type: 'changed',
   },
   {
     key: 'proxy',
-    value1: '123.234.53.22',
-    value2: '123.234.53.00',
+    value: ['123.234.53.22', '123.234.53.00'],
     type: 'changed',
   },
   { key: 'follow', value: false, type: 'unchanged' },
@@ -48,7 +47,7 @@ const nested3 = [
     type: 'unchanged',
     children: [
       {
-        key: 'keylvl-2', value1: 'valuelvl-2', value2: 'valuelvl-3', type: 'changed',
+        key: 'keylvl-2', value: ['valuelvl-2', 'valuelvl-3'], type: 'changed',
       }],
   },
 ];
