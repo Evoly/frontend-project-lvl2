@@ -4,6 +4,7 @@ import { Command } from 'commander';
 import genDiff from '../index.js';
 import version from '../version.js';
 import readFiles from '../parse.js';
+import stringify from '../stringify.js';
 
 const program = new Command();
 
@@ -17,7 +18,7 @@ program
   .action((filepath1, filepath2) => {
     const file1 = readFiles(filepath1);
     const file2 = readFiles(filepath2);
-    console.log(genDiff(file1, file2));
+    console.log(stringify(genDiff(file1, file2)));
 
     console.log('path:', process.cwd());
   });

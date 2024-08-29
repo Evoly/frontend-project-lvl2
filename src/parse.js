@@ -19,7 +19,6 @@ const data = (pathToFile) => {
 
     const result = [...ymlParse].map((el) => {
       const key = Object.keys(el);
-      result[key] = el[key];
       return [Object.keys(el), el[key]].flat();
     });
 
