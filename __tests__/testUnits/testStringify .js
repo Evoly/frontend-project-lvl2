@@ -3,7 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import stringify from '../../src/stringify.js';
+import stylish from '../../src/formatters/stylishFormat.js';
 
 import nestedData from '../__fixtures__/nestedData.js';
 
@@ -14,5 +14,5 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 const nestedStr = fs.readFileSync(getFixturePath('toStr.txt'), 'utf-8');
 
 export default test('test compare', () => {
-  expect(stringify(nestedData)).toBe(nestedStr);
+  expect(stylish(nestedData)).toBe(nestedStr);
 });

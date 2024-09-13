@@ -3,7 +3,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import plainFormat from '../../src/plainFormat.js';
+import plainFormat from '../../src/formatters/plainFormat.js';
 
 import nestedData from '../__fixtures__/nestedData.js';
 

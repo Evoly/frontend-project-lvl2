@@ -4,7 +4,7 @@ import { Command } from 'commander';
 import genDiff from '../index.js';
 import version from '../version.js';
 import readFiles from '../parse.js';
-import format from '../formatters/index.js'
+import format from '../formatters/index.js';
 
 const program = new Command();
 

@@ -1,12 +1,13 @@
 {
   "name": "gendiff",
-  "version": "0.1.0",
+  "version": ".2.0",
   "description": "Compares two configuration files and shows a difference",
   "main": "index.js",
+  "bin": "bin/gendiff.js",
   "scripts": {
     "start": "node index.js",
     "test": "jest --collect-coverage",
-    "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
+    "build": "NODE_ENV=production src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build",
     "package": ""
   },
