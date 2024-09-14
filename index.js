@@ -1,3 +1,3 @@
-const summ = (a, b) => a + b;
+import genDiff from './src/index.js';
 
-export default summ;
+export default genDiff;
