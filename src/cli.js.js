@@ -1,10 +1,6 @@
-#!/usr/bin/env node
-
 import { Command } from 'commander';
-import genDiff from '../index.js';
-import version from '../version.js';
-import readFiles from '../parse.js';
-import format from '../formatters/index.js';
+import genDiff from './index.js';
+import version from './version.js';
 
 const program = new Command();
 
@@ -17,9 +13,8 @@ program
   .helpOption('-h --help', 'output usage information')
   .action((filepath1, filepath2, options) => {
     console.log(options);
-    const file1 = readFiles(filepath1);
-    const file2 = readFiles(filepath2);
-    const result = format(genDiff(file1, file2), options.format);
+
+    const result = genDiff(filepath1, filepath2, options.format);
     console.log(result);
   });
 

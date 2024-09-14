@@ -1,9 +1,8 @@
 {
-  "name": "gendiff",
-  "version": ".2.0",
+  "name": "gendiff-hexlet-project",
+  "version": "1.0.0",
   "description": "Compares two configuration files and shows a difference",
   "main": "index.js",
-  "bin": "bin/gendiff.js",
   "scripts": {
     "start": "node index.js",
     "test": "jest --collect-coverage",
