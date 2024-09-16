@@ -1,4 +1,4 @@
-import genDiff from '../../src/index.js';
+import genDiff from '../../src/diff.js';
 
 const data1 = {
   timeout: 50,
