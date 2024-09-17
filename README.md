@@ -8,3 +8,15 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/Evoly/frontend-project-lvl2/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Evoly/frontend-project-lvl2/actions)
 
+
+## How to use
+
+1. Help message
+    https://asciinema.org/a/EyV3ejYueQSq2rLTonMqyeUaV
+2. Plain format:
+    https://asciinema.org/a/G0UxrwFyiLHi38Iv7Tf8wP6s0
+3. JSON-like format:
+    https://asciinema.org/a/FsVeGzWEsvPTJVigwxKde86Ak
+
+
+
