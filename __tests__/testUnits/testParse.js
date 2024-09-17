@@ -1,6 +1,6 @@
 import parse from '../../src/parse.js';
 
-const json1Path = './__tests__/__fixtures__/file3.json';
+const json1Path = '__tests__/__fixtures__/file3.json';
 const ymlPath = './__tests__/__fixtures__/yaml1.yaml';
 const ymlPath2 = './__tests__/__fixtures__/yaml2.yml';
 

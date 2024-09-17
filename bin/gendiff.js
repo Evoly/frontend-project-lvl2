@@ -1,6 +1,8 @@
+#!/user/bin/env mode
+
 import { Command } from 'commander';
-import genDiff from './index.js';
-import version from './version.js';
+import genDiff from '../index.js';
+import version from '../src/version.js';
 
 const program = new Command();
 

@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Compares two configuration files and shows a difference",
   "main": "index.js",
+  "bin": {
+    "gendiff": "./cli.js"
+  },
   "scripts": {
-    "start": "node index.js",
     "test": "jest --collect-coverage",
     "build": "NODE_ENV=production src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build",
