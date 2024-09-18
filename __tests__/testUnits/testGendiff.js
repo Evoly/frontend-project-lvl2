@@ -14,19 +14,18 @@ const data2 = {
   follow: false,
 };
 
-// TODO order matters ??
 const data3 = [
-  {
-    key: 'timeout', value: [50, 70], type: 'changed',
-  },
+  { key: 'follow', value: false, type: 'unchanged' },
+  { key: 'host', value: 'hexlet.io', type: 'added' },
+  { key: 'keyData1', value: 'strDel', type: 'deleted' },
   {
     key: 'proxy',
     value: ['123.234.53.22', '123.234.53.00'],
     type: 'changed',
   },
-  { key: 'follow', value: false, type: 'unchanged' },
-  { key: 'keyData1', value: 'strDel', type: 'deleted' },
-  { key: 'host', value: 'hexlet.io', type: 'added' },
+  {
+    key: 'timeout', value: [50, 70], type: 'changed',
+  },
 ];
 
 const nested1 = {
