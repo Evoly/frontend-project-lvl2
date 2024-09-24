@@ -14,8 +14,6 @@ program
   .option('-f --format [plain, stylish]', 'choose output format', 'stylish')
   .helpOption('-h --help', 'output usage information')
   .action((filepath1, filepath2, options) => {
-    console.log(options);
-
     const result = genDiff(filepath1, filepath2, options.format);
     console.log(result);
   });
