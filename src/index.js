@@ -2,7 +2,7 @@ import getDiff from './diff.js';
 import readFiles from './parse.js';
 import format from './formatters/index.js';
 
-const genDiff = (filepath1, filepath2, scheme) => {
+const genDiff = (filepath1, filepath2, scheme = 'stylish') => {
   const file1 = readFiles(filepath1);
   const file2 = readFiles(filepath2);
 
