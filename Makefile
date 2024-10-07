@@ -4,7 +4,7 @@ install:
 
 start:
 # node bin/gendiff.js -f 'stylish' __tests__/__fixtures__/file3.json __tests__/__fixtures__/file4.json
-	node bin/gendiff.js -f 'plain' misc/test-data/__fixtures__/file1.json misc/test-data/__fixtures__/file2.json
+	node bin/gendiff.js misc/test-data/__fixtures__/file1.json misc/test-data/__fixtures__/file2.json
 # node bin/gendiff.js ./misc/yaml1.yml ./misc/yaml2.yml
 
 start-h:

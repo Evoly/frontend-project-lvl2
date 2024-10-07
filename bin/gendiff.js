@@ -1,4 +1,4 @@
-#!/user/bin/env mode
+#!/usr/bin/env node
 
 import { Command } from 'commander';
 import genDiff from '../index.js';

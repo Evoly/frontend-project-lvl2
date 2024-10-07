@@ -1,16 +1,13 @@
 {
-  "name": "@hexlet/code",
+  "name": "gendiff-evoly",
   "version": "1.0.0",
   "description": "Compares two configuration files and shows a difference",
   "main": "./index.js",
-  "bin":{
-    "gendiff": "./bin/gendiff.js"
+  "bin": {
+    "gendiff": "bin/gendiff.js"
   },
   "scripts": {
-    "test": "jest --collect-coverage",
-    "build": "NODE_ENV=production src --out-dir dist --source-maps inline",
-    "prepublishOnly": "npm run build",
-    "package": ""
+    "test": "jest --collect-coverage"
   },
   "repository": {
     "type": "git",
