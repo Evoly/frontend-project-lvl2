@@ -51,10 +51,10 @@ const nested3 = [
   },
 ];
 
-export default test('test compare', () => {
+test('compare', () => {
   expect(genDiff(data1, data2)).toEqual(data3);
 });
 
-export const testnested = test('test compare nested', () => {
+test('compare nested', () => {
   expect(genDiff(nested1, nested2)).toEqual(nested3);
 });

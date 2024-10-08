@@ -2,22 +2,18 @@ const isObject = (value) => value && typeof value === 'object' && !Array.isArray
 
 const stringify = (data, lvl = 1, sign = '', substr = ' ', count = 4) => {
   const signes = sign.length === 0 ? substr.repeat(count * lvl) : `${substr.repeat(count * lvl - sign.length)}${sign}`;
-  let result = '';
-
   if (typeof data !== 'object' || data === null) return `${signes}${data.toString()}`;
 
-  [...Object.entries(data)].forEach((el) => {
+  const result = [...Object.entries(data)].map((el) => {
     const [key, value] = el;
     if (isObject(value)) {
-      result += `${signes}${key}: {\n${stringify(value, lvl + 1)}${substr.repeat(signes.length)}}\n`;
-      return result;
+      return `${signes}${key}: {\n${stringify(value, lvl + 1)}${substr.repeat(signes.length)}}\n`;
     }
 
-    result += `${signes}${key}: ${value}\n`;
-    return result;
+    return `${signes}${key}: ${value}\n`;
   });
 
-  return result;
+  return result.join('');
 };
 
 const types = {
@@ -31,23 +27,18 @@ const stylish = (data, substr = ' ', counter = 4) => {
     const arr = currentVal.map((item) => {
       const type = types[item.type];
       const { key } = item;
-      let result = '';
 
       if (Object.hasOwn(item, 'children')) {
-        result += `${stringify(`${key}`, depth, `${type}`)}: {\n${iter(item.children, depth + 1)}${substr.repeat(counter * depth)}}\n`;
-        return result;
+        return `${stringify(`${key}`, depth, `${type}`)}: {\n${iter(item.children, depth + 1)}${substr.repeat(counter * depth)}}\n`;
       }
 
       if (item.type === 'changed') {
         const strDeleted = `${stringify({ [key]: item.value[0] }, depth, `${types.deleted}`)}`;
         const strAdded = `${stringify({ [key]: item.value[1] }, depth, `${types.added}`)}`;
-        result += strDeleted + strAdded;
-
-        return result;
+        return strDeleted + strAdded;
       }
 
-      result += `${stringify({ [key]: item.value }, depth, `${type}`)}`;
-      return result;
+      return `${stringify({ [key]: item.value }, depth, `${type}`)}`;
     });
 
     return arr.join('');

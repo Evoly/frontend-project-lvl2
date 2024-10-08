@@ -30,6 +30,8 @@ export default [
     },
   },
   ...compat.extends('airbnb-base'),
+  ...compat.plugins('fp'),
+  ...compat.extends('plugin:fp/recommended'),
   {
     rules: {
       'no-underscore-dangle': [
@@ -48,6 +50,8 @@ export default [
       'import/no-named-as-default-member': 'off',
       'no-console': 'off',
       'import/no-extraneous-dependencies': 'off',
+      'fp/no-unused-expression': 'off',
+      'fp/no-nil': 'off',
     },
   },
   {

@@ -5,40 +5,32 @@ const isObject = (value) => value && typeof value === 'object' && !Array.isArray
 const toStr = (val) => (typeof val === 'string' ? `'${val}'` : val);
 
 const str = (obj) => {
-  let result = '';
   switch (obj.type) {
     case 'deleted':
-      result = 'was removed';
-      break;
+      return 'was removed';
     case 'added':
       const val = isObject(obj.value) ? '[complex value]' : toStr(obj.value);
-      result = `was added with value: ${val}`;
-      break;
+      return `was added with value: ${val}`;
     case 'changed':
       const val1 = isObject(obj.value[0]) ? '[complex value]' : toStr(obj.value[0]);
       const val2 = isObject(obj.value[1]) ? '[complex value]' : toStr(obj.value[1]);
 
-      result = `was updated. From ${val1} to ${val2}`;
-      break;
+      return `was updated. From ${val1} to ${val2}`;
     default:
       return 'no such type in object';
   }
-  return result;
 };
 
 const plainFormat = (coll) => {
   const iter = (data, key) => {
     const result = data.reduce((acc, obj) => {
       const currentKey = key.length > 0 ? `${key}.${obj.key}` : obj.key;
-      // console.log('obj in reduce', obj, 'acc:', acc)
       if (Object.hasOwn(obj, 'children')) {
-        acc.push(iter(obj.children, currentKey));
-        return acc;
+        return [...acc, iter(obj.children, currentKey)];
       }
-
       if (obj.type !== 'unchanged') {
         const temp = `Property '${currentKey}' ${str(obj)}`;
-        acc.push(temp);
+        return [...acc, temp].flat();
       }
       return acc.flat();
     }, []);

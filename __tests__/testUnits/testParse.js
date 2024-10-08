@@ -38,14 +38,14 @@ const nestedData = {
   },
 };
 
-export default test('test parse json', () => {
+test('parse json', () => {
   expect(parse(json1Path)).toEqual(data);
 });
 
-test('test parse yml', () => {
+test('parse yml', () => {
   expect(parse(ymlPath)).toEqual(nestedData);
 });
 
-test('test parse yml', () => {
+test('parse yml', () => {
   expect(parse(ymlPath2)).toEqual(data);
 });
