@@ -42,7 +42,7 @@ test('parse json', () => {
   expect(parse(json1Path)).toEqual(data);
 });
 
-test('parse yml', () => {
+test('parse yaml', () => {
   expect(parse(ymlPath)).toEqual(nestedData);
 });
 

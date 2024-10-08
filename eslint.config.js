@@ -52,6 +52,7 @@ export default [
       'import/no-extraneous-dependencies': 'off',
       'fp/no-unused-expression': 'off',
       'fp/no-nil': 'off',
+      'fp/no-throw': 'off',
     },
   },
   {
