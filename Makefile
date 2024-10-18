@@ -1,26 +1,18 @@
 
 install:
-	npm install
+	npm ci
 
 start: 
-	node bin/gendiff.js -f 'stylish' __tests__/__fixtures__/file3.json __tests__/__fixtures__/file4.json
+	npx gendiff -f 'stylish' __tests__/__fixtures__/file3.json __tests__/__fixtures__/file4.json
 
-start-h:
-	node bin/gendiff.js -h
+help:
+	npx gendiff -h
 
-start-v:
-	node bin/gendiff.js -V
-
-start-f:
-	node src/bin/gendiff.js -f
-
-pack:
-	npm pack
+v:
+	npx gendiff.js -V
 
 lint:
 	npx eslint .
 
-start-t:	
-	node bin/gendiff.js -h
 
 
