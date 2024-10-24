@@ -13,6 +13,6 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 
 const nestedStr = fs.readFileSync(getFixturePath('toStr.txt'), 'utf-8');
 
-test('compare', () => {
+test('stylish format', () => {
   expect(stylish(nestedData)).toBe(nestedStr);
 });

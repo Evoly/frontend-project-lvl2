@@ -13,6 +13,6 @@ const getFixturePath = (filename) => path.join(__dirname, '..', '__fixtures__', 
 
 const plain = fs.readFileSync(getFixturePath('plainFormat.txt'), 'utf-8');
 
-test('plainFormat', () => {
+test('plain format', () => {
   expect(plainFormat(nestedData)).toEqual(plain);
 });
