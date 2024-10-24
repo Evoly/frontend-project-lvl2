@@ -18,11 +18,9 @@ const getDiff = (coll1, coll2) => {
     if (Object.hasOwn(coll2, key) && !Object.hasOwn(coll1, key)) {
       return Object.fromEntries([...keys, ['value', coll2[key]], ['type', 'added']]);
     }
-    if (Object.hasOwn(coll2, key) && Object.hasOwn(coll1, key)) {
-      return Object.fromEntries([...keys, ['value', [coll1[key], coll2[key]]], ['type', 'changed']]);
-    }
-    return 'smth went wrong';
+    return Object.fromEntries([...keys, ['value', [coll1[key], coll2[key]]], ['type', 'changed']]);
   });
+
   return result;
 };
 
