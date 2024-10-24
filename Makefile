@@ -1,6 +1,7 @@
 
 install:
 	npm ci
+	npm link
 
 start: 
 	npx gendiff -f 'stylish' __tests__/__fixtures__/file1.json __tests__/__fixtures__/file2.json
