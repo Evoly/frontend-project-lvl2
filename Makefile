@@ -10,7 +10,7 @@ help:
 	gendiff -h
 
 v:
-	gendiff.js -V
+	gendiff -V
 
 lint:
 	npx eslint .
